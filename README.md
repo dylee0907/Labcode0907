@@ -8,3 +8,4 @@ I have interests in Machine learning, Block-chain tech and most of all digital c
 If you have any regards related to my codes let me know through my email jjh1304444@naver.com and ill make some changes recommanded.
 Keep in touch everyone.
 Lee over and out!
+(First project i've poseted is digital clock which can be run on FPGA board)
