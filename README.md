@@ -1,5 +1,5 @@
 # Labcode0907
-Master engineer to be
+Master engineer to be in the HOUSSSSSSSSSE!!
 Wassup everyone! 
 I am a engineering student here in Korea attending Kyunghee Uni studying EE for BD(I do have thought on going for MD)
 I finally made my page and will be uploading Verilog HDL, python, C++ and C codes!
