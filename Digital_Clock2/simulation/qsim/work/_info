@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\Digital_Clock2\simulation\qsim
+vclock_div
+Z1 !s100 PXNYN37BniEMmc83OZ4Bi1
+Z2 IM_@f@TNM<PCefJ`[K8o[W3
+Z3 V5I^V>c<kkNBe961z`n40W3
+Z4 dC:\altera\Digital_Clock2\simulation\qsim
+Z5 w1654079201
+Z6 8clock_div.vo
+Z7 Fclock_div.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|clock_div.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1654079202.185000
+Z12 !s107 clock_div.vo|
+!s101 -O0
+vclock_div_vlg_vec_tst
+!i10b 1
+Z13 !s100 I?f8Mi3z?YDaIJXaz6lPh3
+Z14 Ild=JJ^>neDkKngS=353jW1
+Z15 V:;0==:]Hk2XUO@k:5[Fl80
+R4
+w1654079200
+Z16 8clock_div.vt
+Z17 Fclock_div.vt
+L0 29
+R8
+r1
+!s85 0
+31
+!s108 1654079202.244000
+!s107 clock_div.vt|
+Z18 !s90 -work|work|clock_div.vt|
+!s101 -O0
+R10

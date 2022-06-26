@@ -1,0 +1,79 @@
+module time_blk (clk, mode, increase, hour, min, sec);
+	input clk;
+	input increase;
+	input [1:0] mode;
+	output [4:0] hour;
+	output [5:0] min;
+	output [5:0] sec;
+	reg [4:0] hour;
+	reg [5:0] min;
+	reg [5:0] sec;
+	reg inc_hur;
+	reg inc_min;
+	reg [19:0] v_secc;
+	reg [4:0] v_hur;
+	reg [5:0] v_min;
+	reg [5:0] v_sec;
+
+always @(increase or mode)
+begin : set_gen
+	if (increase == 1)
+		begin
+			if (mode == 2'b01)
+				inc_hur <= 1'b1;
+			else if (mode == 2'b10)
+				inc_min <= 1'b1;
+			else
+				begin
+					inc_hur <= 0;
+					inc_min <= 0;
+				end
+		end
+	else
+		begin
+			inc_hur <= 0;
+			inc_min <= 0;
+		end
+end
+
+always @(posedge clk)
+begin : time_gen
+	v_secc <= v_secc + 1;
+	if (v_secc == 20'd999999) begin // 1 MHz 1000000주기는 1초
+		v_sec <= v_sec + 1;
+		v_secc <= 20'd0;
+	end
+	
+	if (v_sec == 6'd59) begin
+		v_min <= v_min + 1;
+		v_sec <= 6'd0;
+	end
+	
+	if (v_min == 6'd59) begin
+		v_hur <= v_hur + 1;
+		v_min <= 6'd0;
+	end
+	
+	if (v_hur == 5'd23)
+		v_hur <= 5'd0;
+
+	if (inc_min == 1) begin
+		if (v_min == 6'd59)
+			v_min <= 6'd0;
+	else
+		v_min <= v_min + 1;
+	end
+
+	if (inc_hur == 1) begin
+		if (v_hur == 5'b 10111)
+			v_hur <= 5'b 00000;
+		else
+			v_hur <= v_hur + 1;
+	end
+	
+	hour <= v_hur;
+	min <= v_min;
+	sec <= v_sec;
+end
+
+endmodule

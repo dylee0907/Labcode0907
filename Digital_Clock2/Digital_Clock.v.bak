@@ -1,0 +1,104 @@
+module Digital_Clock (clk, sw, set, mode, increase, hled_out1, hled_out2, mled_out1, mled_out2, sled_out1, sled_out2);
+	input clk;
+	input sw;
+	input set;
+	output [1:0] mode;
+	output increase;
+	output hled_out1, hled_out2, mled_out1, mled_out2, sled_out1, sled_out2;
+	reg [1:0] mode = 2'b00;
+	reg increase;
+	
+	wire clk_1M;
+	clock_div clk_1M_generator(.clk_in(clk), .clk_out(clk_1M));
+	
+	//모듈 연결을 위한 wire들 필요
+	///////////////////////
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	///////////////////////
+	wire [4:0] h_hour;
+	wire [5:0] m_min; 
+	wire [5:0] s_sec;
+	time_blk time_generator(.clk(clk_1M), .mode(mode), .increase(increase), .hour(h_hour), .min(m_min), .sec(s_sec));
+	
+	always @(posedge sw)
+		begin : mode_gen
+		if (mode == 2'b00)
+			mode <= 2'b01; // 시간설정 모드
+		else if (mode == 2'b01)
+			mode <= 2'b10; // 분 설정 모드
+		else if (mode == 2'b10)
+			mode <= 2'b00; // 시계 모드
+		else
+			mode <= 2'b00;
+		end
+	
+	always @(negedge clk_1M)
+		begin : inc_gen
+		reg [16:0] inc_cnt;
+		if (set)
+			inc_cnt <= inc_cnt + 1;
+		else
+			inc_cnt <= 0;
+		
+		if (inc_cnt == 17'b00000000000000001)
+			increase <= 1'b1;
+		else
+			increase <= 1'b0;
+		end
+	
+	//모듈 연결을 위한 wire들 필요
+	///////////////////////
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	///////////////////////
+	wire [3:0] hdiv_ten;
+	wire [3:0] hdiv_1;
+	wire [3:0] mdiv_ten;
+	wire [3:0] mdiv_1;
+	wire [3:0] sdiv_ten;
+	wire [3:0] sdiv_1;
+	divider d1(.div_in(h_hour), .div_ten(hdiv_ten), .div_1(hdiv_1));
+	divider d2(.div_in(m_min), .div_ten(mdiv_ten), .div_1(mdiv_1));
+	divider d3(.div_in(s_sec), .div_ten(sdiv_ten), .div_1(sdiv_1));
+	
+
+	//모듈 연결을 위한 wire들 필요
+	///////////////////////
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	//							//
+	///////////////////////
+	wire [6:0] hled_out1;
+	wire [6:0] hled_out2;
+	wire [6:0] mled_out1;
+	wire [6:0] mled_out2;
+	wire [6:0] sled_out1;
+	wire [6:0] sled_out2;
+	led_dec ldh1(.led_in(hdiv_ten), .led_out(hled_out1));
+	led_dec ldh2(.led_in(hdiv_1), .led_out(hled_out2));
+
+	led_dec ldm1(.led_in(mdiv_ten), .led_out(mled_out1));
+	led_dec ldm2(.led_in(mdiv_1), .led_out(mled_out2));
+
+	led_dec lds1(.led_in(sdiv_ten), .led_out(sled_out1));
+	led_dec lds2(.led_in(sdiv_1), .led_out(sled_out2));
+
+endmodule

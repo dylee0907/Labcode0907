@@ -1,0 +1,197 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clock_div:clk_1M_generator|clk_out1'
+Slack : -3.668
+TNS   : -288.894
+
+Type  : Slow Model Setup 'clock_div:clk_1M_generator|clk_out2'
+Slack : -2.880
+TNS   : -99.270
+
+Type  : Slow Model Setup 'clk'
+Slack : -1.252
+TNS   : -6.366
+
+Type  : Slow Model Setup 'mode[0]~reg0'
+Slack : 1.277
+TNS   : 0.000
+
+Type  : Slow Model Setup 'mode[1]~reg0'
+Slack : 1.410
+TNS   : 0.000
+
+Type  : Slow Model Setup 'sw'
+Slack : 2.350
+TNS   : 0.000
+
+Type  : Slow Model Hold 'sw'
+Slack : -3.315
+TNS   : -5.528
+
+Type  : Slow Model Hold 'mode[0]~reg0'
+Slack : -2.573
+TNS   : -9.006
+
+Type  : Slow Model Hold 'clk'
+Slack : -2.541
+TNS   : -5.082
+
+Type  : Slow Model Hold 'mode[1]~reg0'
+Slack : -2.156
+TNS   : -4.305
+
+Type  : Slow Model Hold 'clock_div:clk_1M_generator|clk_out1'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clock_div:clk_1M_generator|clk_out2'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'clock_div:clk_1M_generator|clk_out1'
+Slack : -0.778
+TNS   : -29.996
+
+Type  : Slow Model Recovery 'mode[0]~reg0'
+Slack : -0.640
+TNS   : -1.323
+
+Type  : Slow Model Recovery 'mode[1]~reg0'
+Slack : -0.231
+TNS   : -0.596
+
+Type  : Slow Model Removal 'mode[1]~reg0'
+Slack : -2.673
+TNS   : -5.038
+
+Type  : Slow Model Removal 'mode[0]~reg0'
+Slack : 0.053
+TNS   : 0.000
+
+Type  : Slow Model Removal 'clock_div:clk_1M_generator|clk_out1'
+Slack : 1.044
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -8.380
+
+Type  : Slow Model Minimum Pulse Width 'sw'
+Slack : -1.222
+TNS   : -3.222
+
+Type  : Slow Model Minimum Pulse Width 'clock_div:clk_1M_generator|clk_out1'
+Slack : -0.500
+TNS   : -164.000
+
+Type  : Slow Model Minimum Pulse Width 'clock_div:clk_1M_generator|clk_out2'
+Slack : -0.500
+TNS   : -37.000
+
+Type  : Slow Model Minimum Pulse Width 'mode[0]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'mode[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clock_div:clk_1M_generator|clk_out1'
+Slack : -1.158
+TNS   : -57.512
+
+Type  : Fast Model Setup 'clock_div:clk_1M_generator|clk_out2'
+Slack : -0.802
+TNS   : -26.421
+
+Type  : Fast Model Setup 'clk'
+Slack : -0.113
+TNS   : -0.226
+
+Type  : Fast Model Setup 'mode[0]~reg0'
+Slack : 1.178
+TNS   : 0.000
+
+Type  : Fast Model Setup 'mode[1]~reg0'
+Slack : 1.228
+TNS   : 0.000
+
+Type  : Fast Model Setup 'sw'
+Slack : 1.637
+TNS   : 0.000
+
+Type  : Fast Model Hold 'sw'
+Slack : -1.777
+TNS   : -3.084
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.585
+TNS   : -3.170
+
+Type  : Fast Model Hold 'mode[0]~reg0'
+Slack : -1.478
+TNS   : -5.364
+
+Type  : Fast Model Hold 'mode[1]~reg0'
+Slack : -1.290
+TNS   : -2.571
+
+Type  : Fast Model Hold 'clock_div:clk_1M_generator|clk_out1'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock_div:clk_1M_generator|clk_out2'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'mode[0]~reg0'
+Slack : -0.079
+TNS   : -0.079
+
+Type  : Fast Model Recovery 'clock_div:clk_1M_generator|clk_out1'
+Slack : 0.060
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'mode[1]~reg0'
+Slack : 0.117
+TNS   : 0.000
+
+Type  : Fast Model Removal 'mode[1]~reg0'
+Slack : -1.564
+TNS   : -2.957
+
+Type  : Fast Model Removal 'mode[0]~reg0'
+Slack : 0.377
+TNS   : 0.000
+
+Type  : Fast Model Removal 'clock_div:clk_1M_generator|clk_out1'
+Slack : 0.587
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -8.380
+
+Type  : Fast Model Minimum Pulse Width 'sw'
+Slack : -1.222
+TNS   : -3.222
+
+Type  : Fast Model Minimum Pulse Width 'clock_div:clk_1M_generator|clk_out1'
+Slack : -0.500
+TNS   : -164.000
+
+Type  : Fast Model Minimum Pulse Width 'clock_div:clk_1M_generator|clk_out2'
+Slack : -0.500
+TNS   : -37.000
+
+Type  : Fast Model Minimum Pulse Width 'mode[0]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'mode[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
