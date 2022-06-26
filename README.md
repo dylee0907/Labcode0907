@@ -9,3 +9,7 @@ If you have any regards related to my codes let me know through my email jjh1304
 Keep in touch everyone.
 Lee over and out!
 (First project i've poseted is digital clock which can be run on FPGA board)
+
+
+Digital clock has stopwatch, world clock settings. 
+you can control it using switches and buttons on the board.
